@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import SlideFade from '../../components/animation/SlideFade';
 import CenteredDiv from '../../components/layout/CenteredDiv';
 
