@@ -1,0 +1,73 @@
+:root {
+    --header-height: 56px;
+}
+
+.header {
+    height: var(--header-height);
+    width: 100%;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #808080;
+    background-color: #656565;
+    position: relative;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* pushes left and right to edges */
+    height: 100%;
+
+    padding: 0 16px;
+    /* optional padding for spacing */
+}
+
+.left {
+    flex: 1;
+    /* takes available space */
+    display: flex;
+    justify-content: flex-start;
+    /* aligns content to left */
+    align-items: center;
+}
+
+.center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    padding: 8px 12px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    font-size: small;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Hover state */
+.link:hover {
+    background-color: #444;
+    /* dark gray */
+    color: white;
+}
+
+.active {
+    background-color: blue;
+    color: #DE5D83;
+}
+
+.logo {
+    height: 100%;
+    max-height: var(--header-height);
+    object-fit: contain;
+    display: block;
+    padding-right: 1%;
+}
