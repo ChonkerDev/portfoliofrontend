@@ -24,7 +24,7 @@ export default function ProjectProjectLilith() {
                 <Typography variant="h4" component="h2" gutterBottom>
                     Showcase Project Lilith
                 </Typography>
-                <div style={{ position: 'relative', width: '40%', height: '40%' }}>
+                <div style={{ position: 'relative', width: '40%', paddingTop: '22.5%' /* 16:9 aspect ratio */ }}>
                     <iframe
                         src={videoUrl}
                         title="YouTube video player"
@@ -35,7 +35,8 @@ export default function ProjectProjectLilith() {
                             top: 0,
                             left: 0,
                             width: '100%',
-                            height: '100%'
+                            height: '100%',
+                            border: 0
                         }}
                     ></iframe>
                 </div>
