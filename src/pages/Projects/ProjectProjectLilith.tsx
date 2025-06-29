@@ -1,7 +1,7 @@
 import SlideFade from '../../components/animation/SlideFade';
 import {Typography} from "@mui/material";
 
-const videoUrl = "https://f005.backblazeb2.com/file/ChonkerPortfolio/Showcase+Project+Lilith.mp4";
+const videoUrl = "https://www.youtube.com/embed/wyZAEKPqAH8";
 
 export default function ProjectProjectLilith() {
     return <SlideFade>
@@ -26,7 +26,7 @@ export default function ProjectProjectLilith() {
                 </Typography>
                 <div style={{ position: 'relative', width: '40%', height: '40%' }}>
                     <iframe
-                        src="https://www.youtube.com/embed/wyZAEKPqAH8"
+                        src={videoUrl}
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
