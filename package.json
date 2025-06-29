@@ -16,6 +16,7 @@
     "@mui/material": "^7.1.2",
     "framer-motion": "^12.19.2",
     "react": "^19.1.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^19.1.0",
     "react-pdf": "^10.0.1",
     "react-router-dom": "^7.6.3"
