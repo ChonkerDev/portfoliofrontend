@@ -3,14 +3,8 @@ import classes from './ContactForm.module.css';
 import { ValidationError } from "@formspree/react";
 import { useForm } from '@formspree/react';
 
-type ContactFormFields = {
-    name: string;
-    email: string;
-    message: string;
-};
-
 export default function Contact() {
-    const [state, handleSubmit] = useForm<ContactFormFields>("mnnvlvzn");
+    const [state, handleSubmit] = useForm("mnnvlvzn");
 
     return (
         <div>
