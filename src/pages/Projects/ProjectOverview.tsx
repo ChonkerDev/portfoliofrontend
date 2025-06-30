@@ -37,7 +37,7 @@ const items = [
     }
 ];
 
-function Card({title, image, link}) {
+function Card({ title, image, link }: { title: string; image: string; link: string }) {
     return <Link
         to={link}
         style={{
