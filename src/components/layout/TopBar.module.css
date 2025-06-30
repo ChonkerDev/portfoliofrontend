@@ -55,13 +55,12 @@
 /* Hover state */
 .link:hover {
     background-color: #444;
-    /* dark gray */
-    color: white;
+    color: #ff9a01;
 }
 
 .active {
-    background-color: blue;
-    color: #DE5D83;
+    background-color: #ff9a01;
+    color: #ffffff;
 }
 
 .logo {

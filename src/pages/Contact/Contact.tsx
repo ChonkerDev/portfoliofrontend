@@ -1,7 +1,7 @@
-import { TextField, Button, TextareaAutosize } from "@mui/material";
+import {TextField, Button, TextareaAutosize} from "@mui/material";
 import classes from './ContactForm.module.css';
-import { ValidationError } from "@formspree/react";
-import { useForm } from '@formspree/react';
+import {ValidationError} from "@formspree/react";
+import {useForm} from '@formspree/react';
 
 export default function Contact() {
     const [state, handleSubmit] = useForm("mnnvlvzn");
@@ -14,7 +14,7 @@ export default function Contact() {
 
             {state.succeeded ? (
                 <div>
-                    <img src="/logo.png" alt="Logo" className={classes.responsiveImage} />
+                    <img src="/logo.png" alt="Logo" className={classes.responsiveImage}/>
                     <p className={classes.responseText}>Thanks for your message!</p>
                 </div>
             ) : (
@@ -27,7 +27,7 @@ export default function Contact() {
                         required
                         className={classes.inputField}
                     />
-                    <ValidationError prefix="Email" field="email" errors={state.errors} />
+                    <ValidationError prefix="Email" field="email" errors={state.errors}/>
 
                     <div style={{padding: '1rem 0', width: '100%'}}>
                         <label htmlFor="message" style={{display: 'block', marginBottom: '0.5rem', fontWeight: 'bold'}}>
@@ -50,10 +50,10 @@ export default function Contact() {
                             }}
                         />
                     </div>
-                    <ValidationError prefix="Message" field="message" errors={state.errors} />
+                    <ValidationError prefix="Message" field="message" errors={state.errors}/>
 
-                    <div className={classes.buttonGroup}>
-                        <Button type="submit" disabled={state.submitting}>
+                    <div className={classes.submitButton}>
+                        <Button type="submit" disabled={state.submitting} sx={{color: '#ffffff', fontWeight: 'bold'}}>
                             Submit
                         </Button>
                     </div>
