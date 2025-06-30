@@ -4,6 +4,12 @@ import { ValidationError } from "@formspree/react";
 import { useForm } from '@formspree/react';
 
 export default function Contact() {
+    type ContactFormFields = {
+        name: string;
+        email: string;
+        message: string;
+    };
+    
     const [state, handleSubmit] = useForm<ContactFormFields>("mnnvlvzn");
 
     return (
@@ -63,8 +69,3 @@ export default function Contact() {
     );
 }
 
-type ContactFormFields = {
-    name: string;
-    email: string;
-    message: string;
-};
