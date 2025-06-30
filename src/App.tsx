@@ -1,26 +1,25 @@
 import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
-import TopBar from './components/TopBar';
+import TopBar from './components/layout/TopBar.tsx';
 import Home from "./pages/Home.tsx";
 import Resume from "./pages/Resume.tsx";
-import {WorkHistory} from "./pages/WorkHistory.tsx";
+import Skills from "./pages/Skills.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Contact from "./pages/Contact.tsx";
+import Contact from "./pages/Contact/Contact.tsx";
 import Projects from "./pages/Projects.tsx";
 import ProjectOverview from "./pages/Projects/ProjectOverview.tsx";
 import ProjectProjectLilith from "./pages/Projects/ProjectProjectLilith.tsx";
 import ProjectSynthRace from "./pages/Projects/ProjectSynthRace.tsx";
+import ProjectDeliveryCorp from "./pages/Projects/ProjectDeliveryCorp.tsx";
 
 function App() {
     return (
         <div>
-
             <Router>
                 <TopBar/>
                 <Routes>
                     <Route path="/" element={<Navigate to="/home"
                                                        replace/>}/> /*auto route to home when entering site initially*/
                     <Route path="/home" element={<Home/>}/>
-
                     <Route path="/resume" element={<Resume/>}/>
                     <Route path="/home" element={<Home/>}/>
                     <Route path="/projects" element={<Projects/>}>
@@ -28,23 +27,13 @@ function App() {
                         <Route path="projectoverview" element={<ProjectOverview/>}/>
                         <Route path="projectprojectlilith" element={<ProjectProjectLilith/>}/>
                         <Route path="projectsynthrace" element={<ProjectSynthRace/>}/>
+                        <Route path="projectdeliverycorp" element={<ProjectDeliveryCorp/>}/>
                     </Route>
-                    <Route path="/workhistory" element={<WorkHistory/>}/>
+                    <Route path="/skills" element={<Skills/>}/>
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Router>
-
-            {/*            <Routes>
-                <Route path="/home" element={<Home/>}/>
-{                <Route path="/projects" element={<Projects/>}>
-                    <Route index element={<Navigate to="projectoverview" replace/>}/>
-                    <Route path="projectoverview" element={<ProjectOverview/>}/>
-                    <Route path="projectprojectlilith" element={<ProjectProjectLilith/>}/>
-                    <Route path="projectsynthrace" element={<ProjectSynthRace/>}/>
-                </Route>
-                *!/
-            </Routes>*/}
         </div>
     );
 }

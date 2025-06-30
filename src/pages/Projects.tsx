@@ -6,10 +6,11 @@ export default function Projects() {
             <h1 style={{ textAlign: 'center', fontSize: '3rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
                 Projects
             </h1>
-            <nav style={{ display: 'flex', gap: 20, justifyContent: 'center', padding: 20 }}>
+            <nav style={{ display: 'flex', gap: 20, justifyContent: 'center', padding: 20,  }}>
                 <Link to="projectoverview" style={linkStyle}>Overview</Link>
                 <Link to="projectsynthrace" style={linkStyle}>Synth Race</Link>
                 <Link to="projectprojectlilith" style={linkStyle}>Project Lilith</Link>
+                <Link to="projectdeliverycorp" style={linkStyle}>Delivery Corp</Link>
             </nav>
             <div style={{ padding: 20, overflowX: 'hidden' }}>
                 <Outlet />
@@ -23,5 +24,5 @@ const linkStyle = {
     padding: '10px 20px',
     fontWeight: 'bold',
     textDecoration: 'none', // Optional: remove underline
-    color: 'white',         // Optional: adjust to your color theme
+    color: '#ffac6e',         // Optional: adjust to your color theme
 };

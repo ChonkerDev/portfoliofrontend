@@ -15,7 +15,7 @@ export default function Home() {
       </h1>
       <h1 style={{ fontSize: '2rem' }}>Unity Programmer</h1>
       <p >
-        I'm Tim Harrell, a Unity Programmer working under the alias ChonkerDev. With a combined 7 years of programming experience in web and Unity development.
+        I'm Tim Harrell, a Unity programmer working under the alias ChonkerDev. With a combined 7 years of programming experience in Unity and web development, I specialize in
 
 
 

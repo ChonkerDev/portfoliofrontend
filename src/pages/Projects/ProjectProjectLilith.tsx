@@ -1,59 +1,29 @@
 import SlideFade from '../../components/animation/SlideFade';
 import {Typography} from "@mui/material";
-
+import ProjectsHeader from "../../components/layout/ProjectsHeader.tsx";
+import ProjectsRenderYoutube from "../../components/layout/ProjectsRenderYoutube.tsx";
 
 
 export default function ProjectProjectLilith() {
     return (<SlideFade>
-        <div>
-            {renderHeader()}
-            <div style={{
+        <ProjectsHeader headertext="Project Lilith"/>
+        <div
+            style={{
                 display: 'flex',
-                justifyContent: 'start',
-                alignItems: 'start',
-                height: '100vh',
-                flexDirection: 'column'
-            }}>
+                width: '100%',
+                height: '100%', // or a fixed height if needed
+            }}
+        >
+            <div style={{flex: 1, padding: '1rem'}}> {/* Left side */}
                 <Typography variant="h4" component="h2" gutterBottom>
                     Showcase Project Lilith
                 </Typography>
-                {renderVideo()}
+                <ProjectsRenderYoutube videoId="wyZAEKPqAH8"/>
+            </div>
+            <div style={{flex: 1, padding: '1rem', backgroundColor: '#d0d0d0'}}>
+                Right side
             </div>
         </div>
     </SlideFade>);
 }
 
-const renderHeader = () => {
-    return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-        }}>
-            <h2>Header</h2>
-            <p>Details</p>
-        </div>
-    );
-}
-
-const renderVideo = () => {
-    const videoUrl = "https://www.youtube.com/embed/wyZAEKPqAH8";
-    return (<div style={{position: 'relative', width: '40%', paddingTop: '22.5%' /* 16:9 aspect ratio */}}>
-        <iframe
-            src={videoUrl}
-            title="YouTube video player"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 0
-            }}
-        ></iframe>
-    </div>);
-}
