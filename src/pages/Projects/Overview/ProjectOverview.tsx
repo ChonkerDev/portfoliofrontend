@@ -1,5 +1,5 @@
-import SlideFade from '../../components/animation/SlideFade';
-import ProjectsHeader from "../../components/layout/ProjectsHeader.tsx";
+import SlideFade from '../../../components/animation/SlideFade.tsx';
+import ProjectsHeader from "../../../components/layout/ProjectsHeader.tsx";
 import { Link } from 'react-router-dom';
 
 export default function ProjectOverview() {

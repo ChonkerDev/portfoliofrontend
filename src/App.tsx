@@ -6,10 +6,10 @@ import Skills from "./pages/Skills.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Contact from "./pages/Contact/Contact.tsx";
 import Projects from "./pages/Projects.tsx";
-import ProjectOverview from "./pages/Projects/ProjectOverview.tsx";
-import ProjectProjectLilith from "./pages/Projects/ProjectProjectLilith.tsx";
-import ProjectSynthRace from "./pages/Projects/ProjectSynthRace.tsx";
-import ProjectDeliveryCorp from "./pages/Projects/ProjectDeliveryCorp.tsx";
+import ProjectOverview from "./pages/Projects/Overview/ProjectOverview.tsx";
+import ProjectProjectLilith from "./pages/Projects/Project Lilith/ProjectProjectLilith.tsx";
+import ProjectSynthRace from "./pages/Projects/Synth Race/ProjectSynthRace.tsx";
+import ProjectDeliveryCorp from "./pages/Projects/DeliveryCorp/ProjectDeliveryCorp.tsx";
 
 function App() {
     return (

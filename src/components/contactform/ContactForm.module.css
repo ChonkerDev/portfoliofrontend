@@ -6,19 +6,15 @@
     margin: 40px auto;
 }
 
-.inputField {
-    width: 100%;
-    margin-bottom: 16px;
-    text-align: center;
-}
-
 
 .submitButton {
     display: flex;
     justify-content: center;
     width: 20%;
+    min-width: 100px;
     margin-top: 1rem;
     background-color: #e06f00;
+    align-items: center;
 }
 
 .responsiveImage {

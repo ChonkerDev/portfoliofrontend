@@ -1,28 +1,58 @@
 import {Link, Outlet} from "react-router-dom";
+import {useIsMobile} from "../Utils.ts";
 
 export default function Projects() {
+    const isMobile = useIsMobile();
+
     return (
         <div>
-            <h1 style={{ textAlign: 'center', fontSize: '3rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
+            <h1 style={{textAlign: 'center', fontSize: '3rem', fontWeight: 'bold', marginBottom: '1.5rem'}}>
                 Projects
             </h1>
-            <nav style={{ display: 'flex', gap: 20, justifyContent: 'center', padding: 20,  }}>
-                <Link to="projectoverview" style={linkStyle}>Overview</Link>
-                <Link to="projectsynthrace" style={linkStyle}>Synth Race</Link>
-                <Link to="projectprojectlilith" style={linkStyle}>Project Lilith</Link>
-                <Link to="projectdeliverycorp" style={linkStyle}>Delivery Corp</Link>
+            <nav style={{
+                display: 'flex',
+                gap: 20,
+                justifyContent: 'center',
+                alignItems: 'center',
+                whiteSpace: 'nowrap',
+            }}>
+                <Link to="projectoverview" style={OverviewlinkStyle}>Overview</Link>
             </nav>
-            <div style={{ padding: 20, overflowX: 'hidden' }}>
-                <Outlet />
+            {isMobile ? null : (
+                <nav style={{
+                    display: 'flex',
+                    gap: 20,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: 20,
+                    whiteSpace: 'nowrap',
+                    flexWrap: 'wrap'
+                }}>
+                    <Link to="projectsynthrace" style={ProjectlinkStyle}>Synth Race</Link>
+                    <Link to="projectprojectlilith" style={ProjectlinkStyle}>Project Lilith</Link>
+                    <Link to="projectdeliverycorp" style={ProjectlinkStyle}>Delivery Corp</Link>
+                </nav>
+            )}
+
+            <div style={{padding: 20, overflowX: 'hidden'}}>
+                <Outlet/>
             </div>
         </div>
     );
 }
 
-const linkStyle = {
+const OverviewlinkStyle = {
+    fontSize: '2rem',
+    padding: '10px 20px',
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+    color: '#ffac6e',
+};
+
+const ProjectlinkStyle = {
     fontSize: '1.5rem',
     padding: '10px 20px',
     fontWeight: 'bold',
-    textDecoration: 'none', // Optional: remove underline
-    color: '#ffac6e',         // Optional: adjust to your color theme
+    textDecoration: 'none',
+    color: '#ffac6e',
 };

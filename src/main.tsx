@@ -9,8 +9,8 @@ const theme = createTheme({
     palette: {
         mode: 'dark',
         background: {
-            default: grey[900], // or grey[800], grey[700], etc.
-            paper: grey[800] || '#2c2c2c', // for cards/dialogs if needed
+            default: grey[900],
+            paper: grey[800] || '#2c2c2c',
         },
     },
 });

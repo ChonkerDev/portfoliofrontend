@@ -1,6 +1,9 @@
 import {NavLink} from 'react-router-dom';
 import classes from './TopBar.module.css';
-import {Stack} from "@mui/material";
+import {Drawer, IconButton, List, ListItem, ListItemText, Stack} from "@mui/material";
+import {useState} from "react";
+import MenuIcon from '@mui/icons-material/Menu';
+import {useIsMobile} from "../../Utils";
 
 const links = [
     {link: '/home', label: 'Home'},
@@ -12,27 +15,76 @@ const links = [
 ];
 
 export default function TopBar() {
-    const items = links.map(({link, label}) => (
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    const isMobile = useIsMobile();
+
+    const handleToggleDrawer = () => {
+        setDrawerOpen(!drawerOpen);
+    };
+
+    const itemsLinks = links.map(({link, label}) => (
         <NavLink
             key={label}
             to={link}
             className={({isActive}) =>
-                isActive ? classes.link + ' ' + classes.active : classes.link
+                isActive ? `${classes.link} ${classes.active}` : classes.link
             }
+            onClick={() => setDrawerOpen(false)} // close drawer on click
         >
             {label}
         </NavLink>
     ));
 
+    const itemsHamburger = links.map(({link, label}) => (
+        <ListItem
+            button
+            component={NavLink}
+            to={link}
+            sx={{
+                color: 'white',
+                backgroundColor: 'transparent',
+                '&.active': {
+                    color: 'white',
+                    backgroundColor: '#ff9a01',
+                },
+                '&:hover': {
+                    backgroundColor: '#444',
+                    color: '#ff9a01',
+                },
+            }}
+            className={({isActive}) => (isActive ? 'active' : '')}
+        >
+            <ListItemText primary={label}/>
+        </ListItem>
+    ));
+
     return (
         <header className={classes.header}>
             <div className={classes.inner}>
-                <div className={classes.center}>
-                    <img src="/logo.png" alt="Logo" className={classes.logo}/>
-                    <Stack direction="row" spacing={2}>
-                        {items}
-                    </Stack>
-                </div>
+                {isMobile ? (
+                    <>
+                        <div className={classes.side}>
+                            <img src="/logo.png" alt="Logo" className={classes.logo}/>
+                        </div>
+                        <div className={classes.center}>
+                            <IconButton onClick={handleToggleDrawer} color="inherit">
+                                <MenuIcon style={{color: 'white'}}/>
+                            </IconButton>
+                            <Drawer anchor="right" open={drawerOpen} onClose={handleToggleDrawer}>
+                                <List>
+                                    {itemsHamburger}
+                                </List>
+                            </Drawer>
+                        </div>
+                    </>
+                ) : (
+                    <div className={classes.center}>
+                        <img src="/logo.png" alt="Logo" className={classes.logo}/>
+                        <Stack direction="row" spacing={2}>
+                            {itemsLinks}
+                        </Stack>
+                    </div>
+                )}
             </div>
         </header>
     );

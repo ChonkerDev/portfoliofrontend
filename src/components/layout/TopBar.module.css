@@ -14,29 +14,22 @@
 .inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    /* pushes left and right to edges */
     height: 100%;
-
     padding: 0 16px;
-    /* optional padding for spacing */
+    position: relative;
 }
 
-.left {
+.side {
     flex: 1;
-    /* takes available space */
     display: flex;
-    justify-content: flex-start;
-    /* aligns content to left */
     align-items: center;
+    justify-content: flex-start;
 }
 
 .center {
-    flex: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
-    white-space: nowrap;
+    gap: 16px;
 }
 
 .link {
@@ -69,4 +62,39 @@
     object-fit: contain;
     display: block;
     padding-right: 1%;
+}
+
+{/* Desktop, tablet */}
+@media (min-width: 768px) {
+    .center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+{/* Mobile, small screen */}
+@media (max-width: 767px) {
+    .link {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    .inner {
+        justify-content: space-between;
+    }
+
+    .center {
+        justify-content: flex-end;
+        margin-left: auto;
+    }
+
+    .side {
+        justify-content: flex-start;
+    }
+
+    .logo {
+        max-height: 40px;
+        padding-right: 0;
+    }
 }

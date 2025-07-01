@@ -1,39 +1,33 @@
-import { Document, Page, pdfjs } from 'react-pdf';
-import certpdf from '/Unity Programmer certificate Official.pdf'
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
-// CDN version:
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs'; /*{copied from node_modules to public due to worker mismatch version from default website}*/
-
 
 export default function Home() {
-
   return <div>
-    <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
-      <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
+    <div style={{
+      width: '95%',          // or 95%, or '100%' with maxWidth
+      maxWidth: '800px',
+      margin: '0 auto',
+      padding: '0 1rem',
+      boxSizing: 'border-box'
+    }}>
+      <h1 style={{fontSize: '3rem', fontWeight: 'bold', marginBottom: '1.5rem', textAlign: 'center'}}>
         Home
       </h1>
-      <h1 style={{ fontSize: '2rem' }}>Unity Programmer</h1>
-      <p >
-        I'm Tim Harrell, a Unity programmer working under the alias ChonkerDev. With a combined 7 years of programming experience in Unity and web development, I specialize in
+      <h2 style={{fontSize: '2rem', textAlign: 'center'}}>Unity Programmer</h2>
 
-
-
+      <p style={{fontSize: '1.5rem', textAlign: 'left'}}>
+        I'm Tim Harrell, a certified Unity programmer working under the alias ChonkerDev, based in Chicago, IL.
       </p>
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-        <Document file={certpdf}>
-          <Page
-            pageNumber={1}
-            width={800} // Adjust width to fit your layout
-            renderTextLayer={true}
-            renderAnnotationLayer={true}
-          />
-        </Document>
-      </div>
+      <p style={{textAlign: 'left'}}>
+        With a combined 7 years of programming experience in Unity and web development, I specialize in building
+        gameplay systems and UI from artist assets. I'm passionate
+        about creating fluid, accessible, and engaging user experiences — from intuitive 2D interfaces to responsive 3D
+        player controls and intelligent AI systems.
+      </p>
+      <p style={{textAlign: 'left'}}>
+        Most recently, I created and released the online multiplayer obstacle course game <b>Synth Race</b>. I’ve also
+        built a variety of other gameplay demos and prototypes exploring unique mechanics and systems. If interested, please check the projects section for more details.
+      </p>
     </div>
-
-
-
-
   </div>;
 }
