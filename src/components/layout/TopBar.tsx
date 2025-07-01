@@ -1,6 +1,6 @@
 import {NavLink} from 'react-router-dom';
 import classes from './TopBar.module.css';
-import {Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Stack} from "@mui/material";
+import {Drawer, IconButton, List, ListItemButton, ListItemText, Stack} from "@mui/material";
 import {useState} from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import {useIsMobile} from "../../Utils";
