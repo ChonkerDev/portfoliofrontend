@@ -3,8 +3,8 @@ type ProjectInfoProps = {
     renderPipeline: string;
     status: string;
     description: string;
-    keyFeatures: [];
-    technologies: [];
+    keyFeatures: string[];
+    technologies: string[];
 };
 
 export default function ProjectInfo({ version, renderPipeline, status, description,   keyFeatures,
