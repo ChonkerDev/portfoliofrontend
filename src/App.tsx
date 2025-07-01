@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
 import TopBar from './components/layout/TopBar.tsx';
-import Home from "./pages/Home.tsx";
+import Home from "./pages/Home/Home.tsx";
 import Resume from "./pages/Resume.tsx";
 import Skills from "./pages/Skills.tsx";
 import NotFound from "./pages/NotFound.tsx";

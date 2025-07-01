@@ -3,7 +3,7 @@ import ProjectInfo from "../../../components/layout/ProjectInfo.tsx";
 const ProjectLilithDescription = () => {
     const descriptionText = `This was my first major project that I eventually cancelled due to the massive scope I would have to cover as a solo developer. 
         It was heavily inspired by the original Resident Evil 4 and Resident Evil Revelations. A build currently does not exist due to the large file size 
-        of the game (around 15 GB) for what is basically a demo. The videos in the same folder as this doc showcase some of the mechanics and gameplay.`;
+        of the game (around 15 GB) for what is basically a 3 hour demo. The video showcases some of the mechanics and gameplay.`;
 
     const keyFeatures = [
         "VFX object pooling for weapon effects",

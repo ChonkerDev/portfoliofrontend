@@ -36,8 +36,6 @@ export default function ProjectProjectLilith() {
     return (<div><SlideFade>
             <ProjectsHeader headertext="Project Lilith"/>
             {isMobile ? <MobileLayout/> : <DesktopLayout/>}
-
-
         </SlideFade>
         </div>
     );

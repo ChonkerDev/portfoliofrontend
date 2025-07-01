@@ -1,15 +1,18 @@
 import SlideFade from '../../../components/animation/SlideFade.tsx';
 import ProjectsHeader from "../../../components/layout/ProjectsHeader.tsx";
 import { Link } from 'react-router-dom';
+import {useIsMobile} from "../../../Utils.ts";
 
 export default function ProjectOverview() {
+    const isMobile = useIsMobile();
+
     return <SlideFade>
         <ProjectsHeader headertext="Overview"/>
         <div
             style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)', // 3 equal-width columns
-                gap: '1rem', // space between items
+                gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)',
+                gap: '1rem',
             }}
         >
             {items.map((item, index) => (
@@ -57,7 +60,17 @@ function Card({ title, image, link }: { title: string; image: string; link: stri
                 borderRadius: '8px',
             }}
         >
-            <h3 style={{margin: 0}}>{title}</h3>
+            <h3
+                style={{
+                    margin: 0,
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    fontSize: '1rem', // or smaller if needed
+                }}
+            >
+                {title}
+            </h3>
             <video
                 src={image}
                 autoPlay

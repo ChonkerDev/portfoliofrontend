@@ -1,5 +1,6 @@
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
+import HomeFooter from './HomeFooter.tsx';
 
 export default function Home() {
   return <div>
@@ -29,5 +30,7 @@ export default function Home() {
         built a variety of other gameplay demos and prototypes exploring unique mechanics and systems. If interested, please check the projects section for more details.
       </p>
     </div>
+
+    <HomeFooter />
   </div>;
 }
