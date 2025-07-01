@@ -1,9 +1,7 @@
 import {useIsMobile} from "../../../Utils.ts";
 import SlideFade from "../../../components/animation/SlideFade.tsx";
 import ProjectsHeader from "../../../components/layout/ProjectsHeader.tsx";
-import ProjectsRenderYoutube from "../../../components/layout/ProjectsRenderYoutube.tsx";
 import ProjectLayoutTwoColumn from "../../../components/layout/ProjectLayoutTwoColumn.tsx";
-import {Typography} from "@mui/material";
 import ChonkerUtilitiesDescription from "./ChonkerUtilitiesDescription.tsx";
 import GitHubLink from "../../../components/layout/GitHubLink.tsx";
 
