@@ -8,10 +8,11 @@ import ProjectLilithDescription from "./ProjectLilithDescription.tsx";
 
 
 export default function ProjectProjectLilith() {
+    const videoId = "wyZAEKPqAH8"; // YouTube video ID for the project
     const isMobile = useIsMobile();
 
     const DesktopLeft = () => (<div>
-            <ProjectsRenderYoutube videoId="wyZAEKPqAH8"/>
+            <ProjectsRenderYoutube videoId={videoId}/>
         </div>
     );
 
@@ -28,7 +29,7 @@ export default function ProjectProjectLilith() {
             <Typography variant="h4" component="h2" gutterBottom>
                 Showcase Project Lilith
             </Typography>
-            <ProjectsRenderYoutube videoId="vxo2ptucApA"/>
+            <ProjectsRenderYoutube videoId={videoId}/>
             <ProjectLilithDescription/>
         </div>
     );
