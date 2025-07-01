@@ -52,11 +52,10 @@ export default function TopBar() {
                     color: '#ff9a01',
                 },
             }}
-            className={({isActive}) => (isActive ? 'active' : '')}
+            className={({isActive}: { isActive: boolean }) => (isActive ? 'active' : '')}
         >
             <ListItemText primary={label}/>
-        </ListItem>
-    ));
+        </ListItem>));
 
     return (
         <header className={classes.header}>
