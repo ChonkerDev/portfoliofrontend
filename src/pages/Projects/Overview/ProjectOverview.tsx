@@ -1,18 +1,20 @@
 import SlideFade from '../../../components/animation/SlideFade.tsx';
 import ProjectsHeader from "../../../components/layout/ProjectsHeader.tsx";
 import { Link } from 'react-router-dom';
-import {useIsMobile} from "../../../Utils.ts";
+
 
 export default function ProjectOverview() {
-    const isMobile = useIsMobile();
+    {/*const isMobile = useIsMobile();*/}
 
     return <SlideFade>
         <ProjectsHeader headertext="Overview"/>
         <div
             style={{
                 display: 'grid',
-                gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
                 gap: '1rem',
+                width: '100%',
+                padding: '1rem',
             }}
         >
             {items.map((item, index) => (
@@ -46,63 +48,85 @@ const items = [
 ];
 
 function Card({ title, image, link }: { title: string; image: string; link: string }) {
-    return <Link
-        to={link}
-        style={{
-            textDecoration: 'none',
-            color: 'inherit',
-            display: 'block',
-            position: 'relative',
-            borderRadius: '8px',
-            overflow: 'hidden',
-        }}
-    >
-        <div
+    const isVideo = /\.(mp4|webm|ogg|mov|mkv)$/i.test(image);
+
+    return (
+        <Link
+            to={link}
             style={{
-                backgroundColor: '#b96d2f',
-                padding: '1rem',
-                textAlign: 'center',
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'block',
                 borderRadius: '8px',
+                overflow: 'hidden',
+                width: '100%',
+                minWidth: '300px',
+                maxWidth:'800px'
             }}
         >
-            <h3
+            <div
                 style={{
-                    margin: 0,
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    fontSize: '1rem', // or smaller if needed
+                    backgroundColor: '#b96d2f',
+                    padding: '1rem',
+                    textAlign: 'center',
+                    borderRadius: '8px',
                 }}
             >
-                {title}
-            </h3>
-            {/\.(mp4|webm|ogg|mov|mkv)$/i.test(image) ? (
-                <video
-                    src={image}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                <h3
                     style={{
-                        width: '100%',
-                        height: 'auto',
-                        borderRadius: '8px',
-                        marginBottom: '0.5rem',
+                        margin: 0,
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        fontSize: '1rem',
                     }}
-                />
-            ) : (
-                <img
-                    src={image}
-                    alt={title}
+                >
+                    {title}
+                </h3>
+
+                <div
                     style={{
+                        position: 'relative',
                         width: '100%',
-                        height: 'auto',
+                        paddingTop: '56.25%',
                         borderRadius: '8px',
-                        marginBottom: '0.5rem',
+                        overflow: 'hidden',
+                        marginTop: '0.5rem',
                     }}
-                />
-            )}
-        </div>
-    </Link>
-        }
+                >
+                    {isVideo ? (
+                        <video
+                            src={image}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
+                    ) : (
+                        <img
+                            src={image}
+                            alt={title}
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                            }}
+                        />
+                    )}
+                </div>
+            </div>
+        </Link>
+    );
+}
 

@@ -3,7 +3,7 @@ import classes from '../../components/contactform/ContactForm.module.css';
 import {ValidationError, useForm} from "@formspree/react";
 
 export default function ContactForm() {
-    const [state, handleSubmit] = useForm("mnnvlvzn");
+    const [state, handleSubmit] = useForm("mvgrljde");
 
     return (
         <div style={{width: "70%" , margin: "0 auto", padding: "2rem", boxSizing: "border-box", alignItems: "center"}}>
