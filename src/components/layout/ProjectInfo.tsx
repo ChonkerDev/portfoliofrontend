@@ -7,7 +7,7 @@ type ProjectInfoProps = {
     technologies: string[];
 };
 
-export default function ProjectInfo({ version, renderPipeline, status, description,   keyFeatures,
+export default function ProjectInfo({ version, renderPipeline, status,  description,   keyFeatures,
                                         technologies }: ProjectInfoProps) {
 
     return (

@@ -10,6 +10,7 @@ import ProjectOverview from "./pages/Projects/Overview/ProjectOverview.tsx";
 import ProjectProjectLilith from "./pages/Projects/Project Lilith/ProjectProjectLilith.tsx";
 import ProjectSynthRace from "./pages/Projects/Synth Race/ProjectSynthRace.tsx";
 import ProjectDeliveryCorp from "./pages/Projects/DeliveryCorp/ProjectDeliveryCorp.tsx";
+import ProjectChonkerUtilities from "./pages/Projects/Chonker Utilities/ProjectChonkerUtilities.tsx";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                         <Route path="projectprojectlilith" element={<ProjectProjectLilith/>}/>
                         <Route path="projectsynthrace" element={<ProjectSynthRace/>}/>
                         <Route path="projectdeliverycorp" element={<ProjectDeliveryCorp/>}/>
+                        <Route path="chonkerutilies" element={<ProjectChonkerUtilities/>}/>
                     </Route>
                     <Route path="/skills" element={<Skills/>}/>
                     <Route path="/contact" element={<Contact/>}/>

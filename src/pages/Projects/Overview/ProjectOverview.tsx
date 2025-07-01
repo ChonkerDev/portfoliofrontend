@@ -37,6 +37,11 @@ const items = [
         title: 'Delivery Corp',
         imagesrc: '/Project Gifs/Delivery Corp/Delivery Corp.mp4',
         link: '/projects/projectdeliverycorp'
+    },
+    {
+        title: 'Chonker Utilities',
+        imagesrc: '/Project Gifs/Chonker Utilities/chonker utilities.png',
+        link: '/projects/chonkerutilies'
     }
 ];
 
@@ -71,19 +76,32 @@ function Card({ title, image, link }: { title: string; image: string; link: stri
             >
                 {title}
             </h3>
-            <video
-                src={image}
-                autoPlay
-                loop
-                muted
-                playsInline
-                style={{
-                    width: '100%',
-                    height: 'auto',
-                    borderRadius: '8px',
-                    marginBottom: '0.5rem',
-                }}
-            />
+            {/\.(mp4|webm|ogg|mov|mkv)$/i.test(image) ? (
+                <video
+                    src={image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: '8px',
+                        marginBottom: '0.5rem',
+                    }}
+                />
+            ) : (
+                <img
+                    src={image}
+                    alt={title}
+                    style={{
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: '8px',
+                        marginBottom: '0.5rem',
+                    }}
+                />
+            )}
         </div>
     </Link>
         }
