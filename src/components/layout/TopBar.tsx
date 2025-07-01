@@ -1,6 +1,6 @@
 import {NavLink} from 'react-router-dom';
 import classes from './TopBar.module.css';
-import {Drawer, IconButton, List, ListItem, ListItemText, Stack} from "@mui/material";
+import {Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Stack} from "@mui/material";
 import {useState} from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import {useIsMobile} from "../../Utils";
@@ -36,31 +36,25 @@ export default function TopBar() {
     ));
 
     const itemsHamburger = links.map(({ link, label }) => (
-        <NavLink
+        <ListItemButton
             key={link}
+            component={NavLink}
             to={link}
-            className={({ isActive }) => (isActive ? 'active' : '')}
-            style={{ textDecoration: 'none' }}
-        >
-            <ListItem
-                button
-                sx={{
+            sx={{
+                color: 'white',
+                backgroundColor: 'transparent',
+                '&.active': {
                     color: 'white',
-                    backgroundColor: 'transparent',
-                    '&.active': {
-                        color: 'white',
-                        backgroundColor: '#ff9a01',
-                    },
-                    '&:hover': {
-                        backgroundColor: '#444',
-                        color: '#ff9a01',
-                    },
-                }}
-                className="your-listitem-class"
-            >
-                <ListItemText primary={label} />
-            </ListItem>
-        </NavLink>
+                    backgroundColor: '#ff9a01',
+                },
+                '&:hover': {
+                    backgroundColor: '#444',
+                    color: '#ff9a01',
+                },
+            }}
+        >
+            <ListItemText primary={label} />
+        </ListItemButton>
     ));
 
     return (
