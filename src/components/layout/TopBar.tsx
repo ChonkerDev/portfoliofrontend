@@ -35,27 +35,33 @@ export default function TopBar() {
         </NavLink>
     ));
 
-    const itemsHamburger = links.map(({link, label}) => (
-        <ListItem
-            button
-            component={NavLink}
+    const itemsHamburger = links.map(({ link, label }) => (
+        <NavLink
+            key={link}
             to={link}
-            sx={{
-                color: 'white',
-                backgroundColor: 'transparent',
-                '&.active': {
-                    color: 'white',
-                    backgroundColor: '#ff9a01',
-                },
-                '&:hover': {
-                    backgroundColor: '#444',
-                    color: '#ff9a01',
-                },
-            }}
-            className={({isActive}: { isActive: boolean }) => (isActive ? 'active' : '')}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            style={{ textDecoration: 'none' }}
         >
-            <ListItemText primary={label}/>
-        </ListItem>));
+            <ListItem
+                button
+                sx={{
+                    color: 'white',
+                    backgroundColor: 'transparent',
+                    '&.active': {
+                        color: 'white',
+                        backgroundColor: '#ff9a01',
+                    },
+                    '&:hover': {
+                        backgroundColor: '#444',
+                        color: '#ff9a01',
+                    },
+                }}
+                className="your-listitem-class"
+            >
+                <ListItemText primary={label} />
+            </ListItem>
+        </NavLink>
+    ));
 
     return (
         <header className={classes.header}>
