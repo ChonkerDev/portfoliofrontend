@@ -7,7 +7,7 @@ import {
     Link
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {useState} from 'react';
+import {useState, type JSX} from 'react';
 
 export default function Skills() {
     return (
@@ -66,7 +66,7 @@ export default function Skills() {
     );
 }
 
-function SkillAccordion({title, items}) {
+function SkillAccordion({title, items} : {title: string, items: (string | JSX.Element)[]}) {
     const [expanded, setExpanded] = useState(true);
     return (
         <Accordion disableGutters expanded={expanded} onChange={() => setExpanded(!expanded)}>
