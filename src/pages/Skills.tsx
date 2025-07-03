@@ -58,7 +58,7 @@ export default function Skills() {
 
             <SkillAccordion title="Languages & Supporting Tech" items={[
                 "C# (LINQ, Data Structures, JSON, REST APIs, Tasks)",
-                "Animation (Fimpossible Animation Designer, Umotion Pro, Final IK, Magica Cloth )",
+                "Animation (Fimpossible Animation Designer, Umotion Pro, Final IK, Magica Cloth)",
                 "Java (Spring Boot, Maven, JUnit, Mockito)",
                 "JavaScript (Ember.js, React, Vite, Typescript)",
                 "SQL & NoSQL",
