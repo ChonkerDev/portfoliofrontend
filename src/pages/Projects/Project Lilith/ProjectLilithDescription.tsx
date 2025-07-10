@@ -33,7 +33,7 @@ const ProjectLilithDescription = () => {
         <ProjectInfo
             version="Unity 2022.3.60f1"
             renderPipeline="URP"
-            status="Cancelled"
+            status="Archived"
             description={descriptionText}
             keyFeatures={keyFeatures}
             technologies={technologies}
