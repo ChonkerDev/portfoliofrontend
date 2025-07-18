@@ -3,11 +3,17 @@ import resumePdf from '/Timothy Harrell Resume - Contact Removed.pdf'
 import {useEffect, useRef, useState} from "react";
 import certpdf from '/Unity Programmer certificate Official.pdf'
 pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs'; /*{copied from node_modules to public due to worker mismatch version from default website}*/
-
+const resumePath = "/Timothy Harrell Resume - Contact Removed.pdf";
+const certificatePath = "/Unity Programmer certificate Official.pdf";
 
 export default function Resume() {
     const containerRef = useRef<HTMLDivElement>(null);
     const [containerWidth, setContainerWidth] = useState(800);
+    const [numPages, setNumPages] = useState<number | null>(null);
+
+    const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
+        setNumPages(numPages);
+    };
 
     useEffect(() => {
         const updateWidth = () => {
@@ -31,21 +37,31 @@ export default function Resume() {
                 margin: '20px 0',
                 fontSize: '1.25rem', // Larger text
             }}>
-                <a href="/Timothy Harrell Resume - Contact Removed.pdf" download style={{textDecoration: 'none'}}>
+                <a href={resumePath} download style={{textDecoration: 'none'}}>
                     <button>Download Resume</button>
                 </a>
-                <a href="/Unity Programmer certificate Official.pdf" download style={{textDecoration: 'none'}}>
+                <a href={certificatePath} download style={{textDecoration: 'none'}}>
                     <button>Download Certification</button>
                 </a>
             </div>
 
-            <div style={{display: 'flex', justifyContent: 'center', marginTop: '2rem', width: '100%'}}>
-                <Document file={resumePdf}>
-                    <Page
-                        pageNumber={1}
-                        renderTextLayer={true}
-                        renderAnnotationLayer={true}
-                    />
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%'}}>
+                <Document file={resumePdf} onLoadSuccess={onDocumentLoadSuccess}>
+                    {Array.from(new Array(numPages), (_, index) => (
+                        <div
+                            key={`page_${index + 1}`}
+                            style={{
+                                marginBottom: '2px',
+                                borderBottom: '1px solid #eee',
+                            }}
+                        >
+                            <Page
+                                pageNumber={index + 1}
+                                renderTextLayer={true}
+                                renderAnnotationLayer={true}
+                            />
+                        </div>
+                    ))}
                 </Document>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
