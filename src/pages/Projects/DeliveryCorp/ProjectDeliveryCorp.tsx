@@ -43,7 +43,7 @@ export default function ProjectDeliveryCorp() {
 
     const DesktopLayout = () => (
         <ProjectLayoutTwoColumn
-            title={"Showcase Delivery Corp"}
+            title={"Showcase"}
             left={(<DesktopLeft/>)}
             right={<DeliveryCorpDescription/>}
         />

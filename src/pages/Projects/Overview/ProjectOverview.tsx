@@ -41,6 +41,16 @@ const items = [
         link: '/projects/projectdeliverycorp'
     },
     {
+        title: 'Raccoon Rock',
+        imagesrc: '/Project Gifs/Raccoon Rock/Raccoon Rock.mp4',
+        link: '/projects/projectraccoonrock'
+    },
+    {
+        title: 'Flowers For Her',
+        imagesrc: '/Project Gifs/Flowers For Her/Flowers For Her.mp4',
+        link: '/projects/projectflowersforher'
+    },
+    {
         title: 'Chonker Utilities',
         imagesrc: '/Project Gifs/Chonker Utilities/chonker utilities.png',
         link: '/projects/chonkerutilies'

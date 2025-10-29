@@ -25,9 +25,10 @@ const SynthRaceDescription = () => {
 
     return (
         <ProjectInfo
-            version="6000.0.27f1"
+            version="6000.0.58f2"
             renderPipeline="URP"
             status="Released"
+            platform="Windows, Linux (Proton)"
             description={descriptionText}
             keyFeatures={keyFeatures}
             technologies={technologies}

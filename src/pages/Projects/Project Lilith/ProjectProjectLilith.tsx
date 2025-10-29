@@ -18,7 +18,7 @@ export default function ProjectProjectLilith() {
 
     const DesktopLayout = () => (
         <ProjectLayoutTwoColumn
-            title={"Showcase Project Lilith"}
+            title={"Showcase"}
             left={(<DesktopLeft/>)}
             right={<ProjectLilithDescription/>}
         />

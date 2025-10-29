@@ -31,6 +31,8 @@ export default function Projects() {
                     <Link to="projectsynthrace" style={ProjectlinkStyle}>Synth Race</Link>
                     <Link to="projectprojectlilith" style={ProjectlinkStyle}>Project Lilith</Link>
                     <Link to="projectdeliverycorp" style={ProjectlinkStyle}>Delivery Corp</Link>
+                    <Link to="projectraccoonrock" style={ProjectlinkStyle}>Raccoon Rock</Link>
+                    <Link to={"projectflowersforher"} style={ProjectlinkStyle}>Flowers For Her</Link>
                     <Link to="chonkerutilies" style={ProjectlinkStyle}>Chonker Utilities</Link>
                 </nav>
             )}

@@ -30,6 +30,7 @@ const DeliveryCorpDescription = () => {
         <ProjectInfo
             version="6000.0.27f1"
             renderPipeline="HDRP"
+            platform="Windows"
             status="Prototype"
             description={descriptionText}
             keyFeatures={keyFeatures}

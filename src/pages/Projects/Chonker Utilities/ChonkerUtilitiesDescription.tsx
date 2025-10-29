@@ -6,6 +6,7 @@ export default function ChonkerUtilitiesDescription() {
         <ProjectInfo
             version="N/A"
             renderPipeline="N/A"
+            platform="N/A"
             status="N/A"
             description={descriptionText} keyFeatures={[]} technologies={[]}        />
     );

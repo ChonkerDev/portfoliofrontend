@@ -1,19 +1,21 @@
 type ProjectInfoProps = {
     version: string;
     renderPipeline: string;
+    platform: string;
     status: string;
     description: string;
     keyFeatures: string[];
     technologies: string[];
 };
 
-export default function ProjectInfo({ version, renderPipeline, status,  description,   keyFeatures,
+export default function ProjectInfo({ version, platform, renderPipeline, status,  description,   keyFeatures,
                                         technologies }: ProjectInfoProps) {
 
     return (
         <div style={{ maxWidth: 800, margin: '0 auto', padding: '1rem', fontFamily: 'Arial, sans-serif' }}>
             <p><strong>Version:</strong> {version}</p>
             <p><strong>Render Pipeline:</strong> {renderPipeline}</p>
+            <p><strong>Platform:</strong> {platform}</p>
             <p><strong>Status:</strong> {status}</p>
 
             <p>{description}</p>
