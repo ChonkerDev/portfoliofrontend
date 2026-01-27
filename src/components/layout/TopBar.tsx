@@ -8,7 +8,7 @@ import {useIsMobile} from "../../Utils";
 const links = [
     {link: '/home', label: 'Home'},
     {link: '/projects', label: 'Projects'},
-    {link: '/resume', label: 'Resume'},
+    /*{link: '/resume', label: 'Resume'},*/
     {link: '/skills', label: 'Skills'},
     {link: '/contact', label: 'Contact'},
 
